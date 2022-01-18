@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'idea'
+}
+
+group 'com.github.lexshcherbinin'
+version '1.0.0'
+
+sourceCompatibility = JavaVersion.VERSION_17
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.typesafe:config:1.4.1'
+
+    implementation "javax.mail:mail:1.4.7"
+    implementation "javax.activation:activation:1.1.1"
+    implementation "com.sun.mail:smtp:2.0.1"
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    System.properties.each {
+        k, v -> systemProperty k, v
+    }
+}

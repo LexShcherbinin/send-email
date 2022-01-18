@@ -1,0 +1,10 @@
+.idea/
+*target/**
+*/allure-results/**
+.allure/
+*.iml
+*/build/**
+# Project exclude paths
+/.gradle/
+/build/
+/build/classes/java/main/
